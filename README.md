@@ -19,7 +19,7 @@ fly -t ci login
 
 ### Run and test an individual task
 ```bash
-fly -t ci execute -c ci/test-app.yml
+fly -t ci execute -c ci/package-app.yml
 ```
 
 ### Start pipleline
