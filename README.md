@@ -3,6 +3,8 @@ Testing out concourse with the goal of taking a spring boot application into a k
 
 # Concourse 
 
+Download the fly app from concourse.io
+
 ### Start concourse lite
 
 ```bash
@@ -20,4 +22,14 @@ fly -t ci login
 fly -t ci execute -c ci/test-app.yml
 ```
 
+```bash
+fly -t ci set-pipeline -p greeter-pipeline -c ci/pipeline.yml --var "private-repo-key=$(cat id_rsa)"
+```
 
+```bash
+fly -t ci unpause-pipeline -p greeter-pipeline
+```
+
+```bash
+http://192.168.100.4:8080/teams/main/pipelines/greeter-pipeline
+```

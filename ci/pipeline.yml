@@ -1,0 +1,15 @@
+resources:
+- name: concourse-java
+  type: git
+  source:
+    uri: https://github.com/scarrigan/concourse-java.git
+    branch: master
+    private_key: {{private-repo-key}}
+
+jobs:
+- name: test-app
+  plan:
+  - get: concourse-java
+    trigger: true
+  - task: tests
+    file: concourse-java/ci/test-app.yml
