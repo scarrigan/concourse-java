@@ -10,7 +10,7 @@ inputs:
   - name: concourse-java
 
 outputs:
-  -name: target
+  - name: target
 
 run:
   path: ./concourse-java/ci/package-app.sh
