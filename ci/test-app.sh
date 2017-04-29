@@ -3,5 +3,5 @@
 set -e -x
 
 pushd concourse-java
-    mvn test
+    mvn package
 popd
