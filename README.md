@@ -22,6 +22,7 @@ fly -t ci login
 fly -t ci execute -c ci/test-app.yml
 ```
 
+### Start pipleline
 ```bash
 fly -t ci set-pipeline -p greeter-pipeline -c ci/pipeline.yml --var "private-repo-key=$(cat ~/.ssh/id_rsa)" --var "docker-repo-pwd=your-password"
 ```
