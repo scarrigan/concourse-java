@@ -13,4 +13,4 @@ outputs:
   - name: greeter-app
 
 run:
-  path: ./concourse-java/ci/test-app.sh
+  path: ./concourse-java/ci/package-app.sh

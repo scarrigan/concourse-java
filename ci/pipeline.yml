@@ -7,9 +7,11 @@ resources:
     private_key: {{private-repo-key}}
 
 jobs:
-- name: test-app
+- name: build-app
   plan:
   - get: concourse-java
     trigger: true
-  - task: tests
-    file: concourse-java/ci/test-app.yml
+  - task: package
+    file: concourse-java/ci/package-app.yml
+  - task: build-image
+    file: greeter-app/ci/build-image.yml
