@@ -9,8 +9,5 @@ image_resource:
 inputs:
   - name: concourse-java
 
-outputs:
-  - name: greeter-app
-
 run:
   path: ./concourse-java/ci/package-app.sh

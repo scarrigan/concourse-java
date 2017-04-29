@@ -23,7 +23,7 @@ fly -t ci execute -c ci/test-app.yml
 ```
 
 ```bash
-fly -t ci set-pipeline -p greeter-pipeline -c ci/pipeline.yml --var "private-repo-key=$(cat ~/.ssh/id_rsa)"
+fly -t ci set-pipeline -p greeter-pipeline -c ci/pipeline.yml --var "private-repo-key=$(cat ~/.ssh/id_rsa)" --var "docker-repo-pwd=your-password"
 ```
 
 ```bash
@@ -32,4 +32,9 @@ fly -t ci unpause-pipeline -p greeter-pipeline
 
 ```bash
 http://192.168.100.4:8080/teams/main/pipelines/greeter-pipeline
+```
+
+### Debug pipeline
+```bash
+fly -t ci intercept -j greeter-pipeline/build-app 
 ```
