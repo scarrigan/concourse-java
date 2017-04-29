@@ -24,3 +24,7 @@ nbdist/
 .nb-gradle/
 mvnw
 mvnw.cmd
+.vagrant/
+
+src/main/resources/static/
+src/main/resources/templates/
