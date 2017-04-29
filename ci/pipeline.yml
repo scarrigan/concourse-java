@@ -11,7 +11,7 @@ resources:
   source:
     repository: scarrigan/greeter-app
     username: scarrigan
-    password: Elliot14
+    password: {{docker-repo-pwd}}
 
 jobs:
 - name: build-app
