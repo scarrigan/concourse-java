@@ -23,7 +23,7 @@ fly -t ci execute -c ci/test-app.yml
 ```
 
 ```bash
-fly -t ci set-pipeline -p greeter-pipeline -c ci/pipeline.yml --var "private-repo-key=$(cat id_rsa)"
+fly -t ci set-pipeline -p greeter-pipeline -c ci/pipeline.yml --var "private-repo-key=$(cat ~/.ssh/id_rsa)"
 ```
 
 ```bash
