@@ -21,4 +21,4 @@ jobs:
   - task: package
     file: concourse-java/ci/package-app.yml
   - put: docker-image-repo
-    params: {build: concourse-java}
+    params: {build: built-app}
