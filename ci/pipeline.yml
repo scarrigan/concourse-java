@@ -6,6 +6,13 @@ resources:
     branch: master
     private_key: {{private-repo-key}}
 
+- name: docker-image-repo
+  type: docker-image
+  source:
+    repository: scarrigan/greeter-app
+    username: scarrigan
+    password: Elliot14
+
 jobs:
 - name: build-app
   plan:
@@ -13,5 +20,5 @@ jobs:
     trigger: true
   - task: package
     file: concourse-java/ci/package-app.yml
-  - task: build-image
-    file: greeter-app/ci/build-image.yml
+  - put: docker-image-repo
+    params: {build: concourse-java}
